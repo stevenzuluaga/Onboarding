@@ -1802,3 +1802,9 @@ body {
         border-radius: 12px;
     }
 }
+
+
+/* Hide navigation buttons and dots - arrows only */
+.slide-nav {
+    display: none;
+}

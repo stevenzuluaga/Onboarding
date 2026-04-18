@@ -1,8 +1,8 @@
 // Presentation Controller
 class Presentation {
     constructor() {
-        this.currentSlide = 1;
-        this.totalSlides = 11;
+        this.totalSlides = 9;
+        this.currentSlide = this.loadState();
         this.slides = document.querySelectorAll('.slide');
         this.progressFill = document.getElementById('progressFill');
         this.currentSlideEl = document.getElementById('currentSlide');
@@ -12,6 +12,15 @@ class Presentation {
         this.slideDots = document.getElementById('slideDots');
         
         this.init();
+    }
+    
+    loadState() {
+        const saved = localStorage.getItem('presentationSlide');
+        return saved ? parseInt(saved, 10) : 1;
+    }
+    
+    saveState() {
+        localStorage.setItem('presentationSlide', this.currentSlide);
     }
     
     init() {
@@ -27,6 +36,9 @@ class Presentation {
         // Bind events
         this.bindEvents();
         
+        // Go to saved slide
+        this.goToSlide(this.currentSlide, false);
+        
         // Update UI
         this.updateUI();
         
@@ -37,9 +49,8 @@ class Presentation {
     createDots() {
         for (let i = 1; i <= this.totalSlides; i++) {
             const dot = document.createElement('div');
-            dot.className = `dot ${i === 1 ? 'active' : ''}`;
+            dot.className = `dot ${i === this.currentSlide ? 'active' : ''}`;
             dot.dataset.slide = i;
-            dot.addEventListener('click', () => this.goToSlide(i));
             this.slideDots.appendChild(dot);
         }
     }
@@ -63,13 +74,13 @@ class Presentation {
     }
     
     bindEvents() {
-        // Navigation buttons
-        this.prevBtn.addEventListener('click', () => this.prevSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
-        
-        // Keyboard navigation
+        // Keyboard navigation - only arrows
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
+            // Ignore if modal is open
+            const modal = document.getElementById('imageModal');
+            if (modal && modal.classList.contains('active')) return;
+            
+            if (e.key === 'ArrowRight') {
                 e.preventDefault();
                 this.nextSlide();
             } else if (e.key === 'ArrowLeft') {
@@ -77,42 +88,9 @@ class Presentation {
                 this.prevSlide();
             }
         });
-        
-        // Click to advance (on slides)
-        this.slides.forEach(slide => {
-            slide.addEventListener('click', (e) => {
-                // Don't advance if clicking on interactive elements
-                if (e.target.closest('.nav-btn, .dot, button, a, input')) return;
-                this.nextSlide();
-            });
-        });
-        
-        // Touch swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            this.handleSwipe();
-        });
-        
-        this.handleSwipe = () => {
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    this.nextSlide();
-                } else {
-                    this.prevSlide();
-                }
-            }
-        };
     }
     
-    goToSlide(slideNum) {
+    goToSlide(slideNum, animate = true) {
         if (slideNum < 1 || slideNum > this.totalSlides) return;
         
         const currentSlideEl = document.querySelector('.slide.active');
@@ -138,10 +116,13 @@ class Presentation {
         }
         
         this.currentSlide = slideNum;
+        this.saveState();
         this.updateUI();
         
         // Trigger slide-specific animations
-        this.triggerSlideAnimations(slideNum);
+        if (animate) {
+            this.triggerSlideAnimations(slideNum);
+        }
     }
     
     nextSlide() {
@@ -181,7 +162,7 @@ class Presentation {
         }
         
         // Confetti on last slide
-        if (slideNum === 11) {
+        if (slideNum === 9) {
             this.createConfetti();
         }
     }
