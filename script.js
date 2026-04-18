@@ -241,7 +241,46 @@ class Presentation {
 // Initialize presentation when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new Presentation();
+    initImageModal();
 });
+
+// Image Modal functionality
+function initImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = modal.querySelector('.modal-overlay');
+    
+    // Get all clickable images
+    const images = document.querySelectorAll('.demo-screenshot-compare, .demo-screenshot-full');
+    
+    images.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            modalImage.src = img.src;
+            modalCaption.textContent = img.alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+    
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
 
 // Prevent context menu on right-click (optional, for presentation mode)
 document.addEventListener('contextmenu', (e) => {

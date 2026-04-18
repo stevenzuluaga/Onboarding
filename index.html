@@ -286,8 +286,15 @@
             <span class="slide-number">08</span>
             <h2>Demo</h2>
           </div>
-          <div class="demo-slide-image">
-            <img src="./assets/captura.png" alt="Demo del Onboarding Agéntico" class="demo-screenshot-full" />
+          <div class="demo-comparison">
+            <div class="demo-before">
+              <span class="demo-label">Antes</span>
+              <img src="./assets/antes.png" alt="Proceso anterior" class="demo-screenshot-compare" />
+            </div>
+            <div class="demo-after">
+              <span class="demo-label">Después</span>
+              <img src="./assets/captura.png" alt="Onboarding Agéntico" class="demo-screenshot-compare" />
+            </div>
           </div>
         </div>
       </section>
@@ -343,6 +350,16 @@
       <!-- Slide Counter -->
       <div class="slide-counter">
         <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
+      </div>
+    </div>
+
+    <!-- Modal para imágenes -->
+    <div class="image-modal" id="imageModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="Imagen ampliada" class="modal-image" id="modalImage" />
+        <span class="modal-caption" id="modalCaption"></span>
       </div>
     </div>
 
