@@ -2,7 +2,7 @@
 class Presentation {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 10;
+        this.totalSlides = 11;
         this.slides = document.querySelectorAll('.slide');
         this.progressFill = document.getElementById('progressFill');
         this.currentSlideEl = document.getElementById('currentSlide');
@@ -181,7 +181,7 @@ class Presentation {
         }
         
         // Confetti on last slide
-        if (slideNum === 10) {
+        if (slideNum === 11) {
             this.createConfetti();
         }
     }
