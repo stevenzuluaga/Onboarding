@@ -122,40 +122,6 @@
             </div>
         </section>
 
-        <!-- Slide 5: Impacto para el Negocio -->
-        <section class="slide" data-slide="5">
-            <div class="slide-content">
-                <div class="slide-header">
-                    <span class="slide-number">04</span>
-                    <h2>Impacto para el Negocio</h2>
-                </div>
-                <div class="business-impact">
-                    <div class="impact-features-grid">
-                        <div class="impact-feature-card" data-delay="0">
-                            <div class="impact-feature-icon">📊</div>
-                            <h3>Explica el Modelo Actual</h3>
-                            <p>El agente describe claramente las diferencias entre Agregador y Gateway, ayudando al comercio a entender cuál se adapta mejor a su operación.</p>
-                        </div>
-                        <div class="impact-feature-card" data-delay="100">
-                            <div class="impact-feature-icon">🏢</div>
-                            <h3>Valida Actividad Económica</h3>
-                            <p>Verifica automáticamente el tipo de negocio usando el código CIIU, asegurando que la actividad económica sea compatible con los servicios de Wompi.</p>
-                        </div>
-                        <div class="impact-feature-card" data-delay="200">
-                            <div class="impact-feature-icon">💾</div>
-                            <h3>Guarda Estado de Vinculación</h3>
-                            <p>Si el comercio cierra el chat y vuelve después, el agente recuerda exactamente dónde quedó. Cero repetición de información.</p>
-                        </div>
-                        <div class="impact-feature-card" data-delay="500">
-                            <div class="impact-feature-icon">🎯</div>
-                            <h3>Recomendación Personalizada</h3>
-                            <p>Basado en volumen de ventas, tipo de negocio y necesidades, recomienda el modelo óptimo con explicación clara del porqué.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Slide 6: Cumplimiento y Técnico -->
         <section class="slide" data-slide="6">
             <div class="slide-content">
@@ -186,23 +152,36 @@
                 </div>
                 <div class="architecture-container">
                     <div class="arch-badge">Patrón Swarm</div>
-                    <div class="agents-flow">
-                        <div class="agent-node" data-agent="triage">
-                            <div class="agent-icon">🎯</div>
-                            <span>Triage</span>
-                            <small>Rutea al especialista</small>
+                    <div class="agents-hub">
+                        <!-- Triage como centro -->
+                        <div class="triage-center">
+                            <div class="agent-node triage-node" data-agent="triage">
+                                <div class="agent-icon">🎯</div>
+                                <span>Triage</span>
+                                <small>Orquestador Central</small>
+                            </div>
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-ring delay-1"></div>
                         </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="agent-node" data-agent="clasificacion">
-                            <div class="agent-icon">📋</div>
-                            <span>Clasificación</span>
-                            <small>Agregador vs Gateway</small>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="agent-node" data-agent="cumplimiento">
-                            <div class="agent-icon">✅</div>
-                            <span>Cumplimiento</span>
-                            <small>Invoca SARLAFT</small>
+                        
+                        <!-- Agentes conectados -->
+                        <div class="connected-agents">
+                            <div class="agent-branch branch-left">
+                                <div class="connection-line"></div>
+                                <div class="agent-node" data-agent="clasificacion">
+                                    <div class="agent-icon">📋</div>
+                                    <span>Clasificación</span>
+                                    <small>Agregador vs Gateway</small>
+                                </div>
+                            </div>
+                            <div class="agent-branch branch-right">
+                                <div class="connection-line"></div>
+                                <div class="agent-node" data-agent="cumplimiento">
+                                    <div class="agent-icon">✅</div>
+                                    <span>Cumplimiento</span>
+                                    <small>Invoca SARLAFT</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -311,7 +290,7 @@
                     <div class="team-info">
                         <div class="team-badge-enhanced">
                             <span class="team-icon">👥</span>
-                            <span>Equipo Onboarding Agéntico</span>
+                            <span>Equipo Vamo a ganar</span>
                         </div>
                         <p class="event-info">Hackathon Wompi 2026 — Reto #03</p>
                     </div>

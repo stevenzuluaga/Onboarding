@@ -1295,3 +1295,244 @@ body {
         font-size: 1.2rem;
     }
 }
+
+
+/* Architecture Hub Design (Slide 7) */
+.agents-hub {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    margin-bottom: 40px;
+}
+
+.triage-center {
+    position: relative;
+    z-index: 10;
+}
+
+.triage-node {
+    background: var(--gradient) !important;
+    border: 3px solid var(--verde-lima) !important;
+    transform: scale(1.15);
+    box-shadow: 0 0 40px rgba(0, 130, 90, 0.4);
+}
+
+.triage-node span {
+    color: var(--white) !important;
+    font-weight: 700;
+}
+
+.triage-node small {
+    color: rgba(250, 250, 250, 0.9) !important;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border: 2px solid var(--verde-menta);
+    border-radius: 50%;
+    animation: pulse-expand 2s ease-out infinite;
+    pointer-events: none;
+}
+
+.pulse-ring.delay-1 {
+    animation-delay: 1s;
+}
+
+@keyframes pulse-expand {
+    0% {
+        width: 140px;
+        height: 140px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 280px;
+        height: 280px;
+        opacity: 0;
+    }
+}
+
+.connected-agents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.agent-branch {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.agent-branch .agent-node {
+    position: relative;
+    z-index: 5;
+}
+
+.branch-left {
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: row-reverse;
+}
+
+.branch-top {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    flex-direction: column-reverse;
+}
+
+.branch-right {
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.connection-line {
+    position: relative;
+    background: var(--verde-menta);
+    opacity: 0.6;
+}
+
+.branch-left .connection-line,
+.branch-right .connection-line {
+    width: 80px;
+    height: 3px;
+}
+
+.branch-top .connection-line {
+    width: 3px;
+    height: 60px;
+}
+
+.connection-line::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--verde-lima);
+    border-radius: 50%;
+    animation: data-flow 1.5s ease-in-out infinite;
+}
+
+.branch-left .connection-line::after {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    animation-name: data-flow-left;
+}
+
+.branch-right .connection-line::after {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation-name: data-flow-right;
+}
+
+.branch-top .connection-line::after {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: data-flow-top;
+}
+
+@keyframes data-flow-left {
+    0%, 100% { right: 0; opacity: 1; }
+    50% { right: 70px; opacity: 0.5; }
+}
+
+@keyframes data-flow-right {
+    0%, 100% { left: 0; opacity: 1; }
+    50% { left: 70px; opacity: 0.5; }
+}
+
+@keyframes data-flow-top {
+    0%, 100% { bottom: 0; opacity: 1; }
+    50% { bottom: 50px; opacity: 0.5; }
+}
+
+/* Updated agent node styles for Wompi colors */
+.agent-node {
+    background: var(--dark-light);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--verde-menta);
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.agent-node:hover {
+    border-color: var(--verde-lima);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 130, 90, 0.3);
+}
+
+.agent-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.agent-node span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--verde-menta);
+}
+
+.agent-node small {
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+    .agents-hub {
+        min-height: 500px;
+    }
+    
+    .branch-left,
+    .branch-right {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 20px 0;
+    }
+    
+    .branch-top {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    
+    .connected-agents {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    .connection-line {
+        display: none;
+    }
+    
+    .triage-center {
+        margin-bottom: 20px;
+    }
+}
