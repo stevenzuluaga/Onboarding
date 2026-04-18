@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding Agéntico - Wompi Hackathon 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Slide 1: Título -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <div class="logo-container">
+                    <div class="logo-icon">🤖</div>
+                </div>
+                <h1 class="main-title">Onboarding <span class="gradient-text">Agéntico</span></h1>
+                <p class="subtitle">Transformando la vinculación de comercios con IA conversacional</p>
+                <div class="event-badge">
+                    <span class="badge-icon">🏆</span>
+                    <span>Hackathon Wompi 2026 - Reto #03</span>
+                </div>
+                <div class="scroll-hint">
+                    <span>Presiona → o haz clic para continuar</span>
+                    <div class="arrow-bounce">→</div>
+                </div>
+            </div>
+            <div class="particles" id="particles1"></div>
+        </section>
+
+        <!-- Slide 2: Apertura -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">01</span>
+                    <h2>El Escenario Actual</h2>
+                </div>
+                <div class="scenario-container">
+                    <div class="scenario-card problem">
+                        <div class="scenario-icon">😓</div>
+                        <h3>Hoy</h3>
+                        <ul class="scenario-list">
+                            <li>Navegar formularios complejos</li>
+                            <li>Entender Agregador vs Gateway</li>
+                            <li>Subir documentos manualmente</li>
+                            <li>Esperar validaciones</li>
+                            <li>Si falla... empezar de cero</li>
+                        </ul>
+                    </div>
+                    <div class="vs-divider">
+                        <span>VS</span>
+                    </div>
+                    <div class="scenario-card solution">
+                        <div class="scenario-icon">💬</div>
+                        <h3>Con Onboarding Agéntico</h3>
+                        <ul class="scenario-list">
+                            <li>Conversación natural</li>
+                            <li>Guía paso a paso</li>
+                            <li>Entiende tu negocio</li>
+                            <li>Nunca olvida dónde quedaste</li>
+                            <li>Siempre disponible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: El Problema -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">02</span>
+                    <h2>El Problema</h2>
+                </div>
+                <div class="problems-grid">
+                    <div class="problem-card" data-delay="0">
+                        <div class="problem-icon">🏪</div>
+                        <h3>Para el Comercio</h3>
+                        <p>No saben qué modelo les conviene. Formularios genéricos que no se adaptan. Si se interrumpe, hay que repetir todo.</p>
+                    </div>
+                    <div class="problem-card" data-delay="200">
+                        <div class="problem-icon">⚖️</div>
+                        <h3>Para Cumplimiento</h3>
+                        <p>Garantizar que <strong>ningún</strong> comercio se active sin pasar por SARLAFT es crítico para el negocio.</p>
+                    </div>
+                    <div class="problem-card" data-delay="400">
+                        <div class="problem-icon">👨‍💻</div>
+                        <h3>Para el Equipo Técnico</h3>
+                        <p>Necesitan visibilidad total de qué pasó en cada vinculación para auditoría y mejora continua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: La Solución -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">03</span>
+                    <h2>La Solución</h2>
+                </div>
+                <div class="solution-hero">
+                    <div class="tech-badge">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="aws-logo">
+                        <span>AWS Bedrock + Strand Agent + claude-sonnet-4</span>
+                    </div>
+                    <p class="solution-tagline">Un agente conversacional inteligente que <span class="highlight">piensa</span>, <span class="highlight">decide</span> y <span class="highlight">actúa</span></p>
+                </div>
+                <div class="features-row">
+                    <div class="feature-item">
+                        <div class="feature-number">Auto</div>
+                        <span>Clasificación de modelo</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">100%</div>
+                        <span>Trazabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Impacto para el Negocio -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">04</span>
+                    <h2>Impacto para el Negocio</h2>
+                </div>
+                <div class="business-impact">
+                    <div class="impact-features-grid">
+                        <div class="impact-feature-card" data-delay="0">
+                            <div class="impact-feature-icon">📊</div>
+                            <h3>Explica el Modelo Actual</h3>
+                            <p>El agente describe claramente las diferencias entre Agregador y Gateway, ayudando al comercio a entender cuál se adapta mejor a su operación.</p>
+                        </div>
+                        <div class="impact-feature-card" data-delay="100">
+                            <div class="impact-feature-icon">🏢</div>
+                            <h3>Valida Actividad Económica</h3>
+                            <p>Verifica automáticamente el tipo de negocio usando el código CIIU, asegurando que la actividad económica sea compatible con los servicios de Wompi.</p>
+                        </div>
+                        <div class="impact-feature-card" data-delay="200">
+                            <div class="impact-feature-icon">💾</div>
+                            <h3>Guarda Estado de Vinculación</h3>
+                            <p>Si el comercio cierra el chat y vuelve después, el agente recuerda exactamente dónde quedó. Cero repetición de información.</p>
+                        </div>
+                        <div class="impact-feature-card" data-delay="500">
+                            <div class="impact-feature-icon">🎯</div>
+                            <h3>Recomendación Personalizada</h3>
+                            <p>Basado en volumen de ventas, tipo de negocio y necesidades, recomienda el modelo óptimo con explicación clara del porqué.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Cumplimiento y Técnico -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">05</span>
+                    <h2>Cumplimiento & Trazabilidad</h2>
+                </div>
+                <div class="dual-section">
+                    <div class="section-card compliance">
+                        <div class="section-icon">🛡️</div>
+                        <h3>Para Cumplimiento</h3>
+                        <div class="compliance-badge">
+                            <span class="lock-icon">🔒</span>
+                            <span>SARLAFT Obligatorio</span>
+                        </div>
+                        <p>El agente <strong>siempre</strong> invoca la validación SARLAFT antes de aprobar. No hay forma de saltarse este paso.</p>
+                    </div>
+                    <div class="section-card technical">
+                        <div class="section-icon">📊</div>
+                        <h3>Para el Equipo Técnico</h3>
+                        <div class="trace-example">
+                            <code>
+                                <span class="code-key">tool:</span> validate_nit<br>
+                                <span class="code-key">input:</span> "900123456"<br>
+                                <span class="code-key">result:</span> <span class="code-success">valid</span><br>
+                                <span class="code-key">timestamp:</span> 2026-04-18T10:30:00Z
+                            </code>
+                        </div>
+                        <p>Cada decisión queda registrada y es consultable por comercio o sesión.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Arquitectura -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">06</span>
+                    <h2>Arquitectura Multi-Agente</h2>
+                </div>
+                <div class="architecture-container">
+                    <div class="arch-badge">Patrón Swarm</div>
+                    <div class="agents-flow">
+                        <div class="agent-node" data-agent="triage">
+                            <div class="agent-icon">🎯</div>
+                            <span>Triage</span>
+                            <small>Rutea al especialista</small>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="agent-node" data-agent="clasificacion">
+                            <div class="agent-icon">📋</div>
+                            <span>Clasificación</span>
+                            <small>Agregador vs Gateway</small>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="agent-node" data-agent="cumplimiento">
+                            <div class="agent-icon">✅</div>
+                            <span>Cumplimiento</span>
+                            <small>Invoca SARLAFT</small>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-label">Backend</span>
+                            <span class="tech-value">NestJS</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-label">Frontend</span>
+                            <span class="tech-value">Next JS</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-label">DB</span>
+                            <span class="tech-value">DynamoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-label">Auth</span>
+                            <span class="tech-value">Cognito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Diferenciadores -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">07</span>
+                    <h2>Diferenciadores</h2>
+                </div>
+                <div class="differentiators">
+                    <div class="diff-card">
+                        <div class="diff-number">1</div>
+                        <h3>Conversación Natural</h3>
+                        <p>El comercio interactúa como si hablara con un asesor experto. Sin formularios rígidos, sin menús confusos — solo una conversación fluida que guía paso a paso.</p>
+                        <div class="diff-icon">💬</div>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-number">2</div>
+                        <h3>Cumplimiento Garantizado</h3>
+                        <p>SARLAFT no es opcional. Está en el código, no en un proceso manual.</p>
+                        <div class="diff-icon">🔐</div>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-number">3</div>
+                        <h3>Trazabilidad Completa</h3>
+                        <p>Cada decisión, cada herramienta, cada error — todo queda registrado en formato estructurado.</p>
+                        <div class="diff-icon">📝</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Impacto -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">08</span>
+                    <h2>Impacto</h2>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">⚡</div>
+                        <h3>Reduce Fricción</h3>
+                        <p>Mejor experiencia para el comercio</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">🛡️</div>
+                        <h3>Garantiza Cumplimiento</h3>
+                        <p>SARLAFT siempre se ejecuta</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">👁️</div>
+                        <h3>Visibilidad Total</h3>
+                        <p>Auditoría y mejora continua</p>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+
+        <!-- Slide 10: Cierre -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content title-slide">
+                <div class="closing-hero">
+                    <div class="closing-icon">🚀</div>
+                    <h2>Transformamos la vinculación de comercios</h2>
+                    <p class="closing-tagline">Simplificamos lo complejo para que <span class="gradient-text">crecer sea solo cuestión de conversar</span></p>
+                </div>
+                <div class="final-stats-enhanced">
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <span class="stat-value">Escala</span>
+                        <span class="stat-label">Miles de comercios sin perder la conversación</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🛡️</div>
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Cumplimiento SARLAFT garantizado</span>
+                    </div>
+                </div>
+                <div class="thank-you-enhanced">
+                    <h1>¡Gracias!</h1>
+                    <p class="closing-question">¿Preguntas?</p>
+                    <div class="team-info">
+                        <div class="team-badge-enhanced">
+                            <span class="team-icon">👥</span>
+                            <span>Equipo Onboarding Agéntico</span>
+                        </div>
+                        <p class="event-info">Hackathon Wompi 2026 — Reto #03</p>
+                    </div>
+                </div>
+            </div>
+            <div class="confetti" id="confetti"></div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <button class="nav-btn prev" id="prevBtn">←</button>
+            <div class="slide-dots" id="slideDots"></div>
+            <button class="nav-btn next" id="nextBtn">→</button>
+        </nav>
+
+        <!-- Slide Counter -->
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
